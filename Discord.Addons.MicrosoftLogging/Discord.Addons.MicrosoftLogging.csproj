@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Discord.Addons.MicrosoftLogging</AssemblyName>
+    <RootNamespace>Discord.Addons.MicrosoftLogging</RootNamespace>
+    <Description>An addon for Discord.Net adding support for Microsoft's logging abstractions.</Description>
+    <TargetFrameworks>netstandard1.1</TargetFrameworks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Discord.Net.WebSocket" Version="2.0.0-beta-00854" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
+  </ItemGroup>
 
 </Project>
