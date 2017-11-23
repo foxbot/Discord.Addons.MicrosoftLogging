@@ -1,8 +1,12 @@
 language: csharp
+solution: Discord.Addons.MicrosoftLogging.sln
 mono: none
 dotnet: 2.0.0
 dist: trusty
-solution: Discord.Addons.MicrosoftLogging.sln
+install:
+  - dotnet restore
+script:
+  - dotnet build
 deploy:
   skip_cleanup: true
   provider: script
