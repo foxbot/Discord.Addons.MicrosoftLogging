@@ -10,6 +10,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: chmod +x ./deploy.sh && ./deploy.sh $MYGET_KEY
+  script: chmod +x ./deploy.sh && ./deploy.sh $TRAVIS_BUILD_NUMBER $MYGET_KEY
   on: 
     branch: master
