@@ -6,6 +6,6 @@ solution: Discord.Addons.MicrosoftLogging.sln
 deploy:
   skip_cleanup: true
   provider: script
-  script: chmod +x ./deploy.sh && ./deploy.sh 
+  script: chmod +x ./deploy.sh && ./deploy.sh $MYGET_KEY
   on: 
     branch: master
