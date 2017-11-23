@@ -1,6 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <VersionPrefix>2.0.0</VersionPrefix>
+    <VersionSuffix>beta</VersionSuffix>
+    <Authors>foxbot</Authors>
+    <PackageTags>discord;discordapp</PackageTags>
+    <PackageProjectUrl>https://github.com/foxbot/Discord.Addons.MicrosoftLogging</PackageProjectUrl>
+    <PackageLicenseUrl>http://opensource.org/licenses/ISC</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/foxbot/Discord.Addons.MicrosoftLogging</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(BuildNumber)' == '' ">
+      <VersionSuffix Condition=" '$(VersionSuffix)' != ''">$(VersionSuffix)-dev</VersionSuffix>
+      <VersionSuffix Condition=" '$(VersionSuffix)' == ''">dev</VersionSuffix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(BuildNumber)' != '' And $(IsTagBuild) == '' ">
+      <VersionSuffix Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
+      <VersionSuffix Condition=" '$(VersionSuffix)' == '' ">build-$(BuildNumber)</VersionSuffix>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <AssemblyName>Discord.Addons.MicrosoftLogging</AssemblyName>
     <RootNamespace>Discord.Addons.MicrosoftLogging</RootNamespace>
     <Description>An addon for Discord.Net adding support for Microsoft's logging abstractions.</Description>
