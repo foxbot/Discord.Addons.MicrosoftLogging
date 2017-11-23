@@ -7,4 +7,4 @@ feed="https://www.myget.org/F/discord-net/api/v3/index.json"
 
 build=$(printf %05d $build)
 dotnet pack $project -c "Release" -o "../artifacts" /p:BuildNumber="$build" /p:IsTagBuild="$TRAVIS_TAG"
-dotnet nuget push ./artifcats/*.nupkg -s $feed -k $token
+dotnet nuget push ./artifacts/*.nupkg -s $feed -k $token
